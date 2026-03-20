@@ -1,0 +1,2 @@
+# cursor_account_switcher
+cursor多账号管理工具
