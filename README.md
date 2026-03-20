@@ -180,48 +180,6 @@ python3 cursor_account_switcher_web.py --open-browser --port 8765
 
 ---
 
-## Tk 图形界面（可选）
-
-```bash
-python3 cursor_account_switcher_gui.py
-```
-
-若报错 `No module named '_tkinter'`，说明当前 Python 未带 Tk，请优先使用 **Web 版**，或为系统安装带 Tk 的 Python。
-
----
-
-## macOS 打包为 .app / DMG（可选）
-
-在 **本仓库根目录**（与 `cursor_account_switcher_web.py` 同级）执行脚本即可生成 **「Cursor账号切换器.app」**；若已安装 [create-dmg](https://github.com/create-dmg/create-dmg)，会额外生成 **`.dmg`**（含拖到「应用程序」的快捷方式）。
-
-```bash
-# 首次会在项目下创建 .venv-build-pyi 并安装 PyInstaller（避免系统 Python 的 PEP 668 限制）
-bash packaging/macos/build_dmg.sh
-
-# 仅想生成 DMG 时建议先安装：
-#   brew install create-dmg
-```
-
-- **产物路径**：`dist/Cursor账号切换器.app`、`dist/Cursor账号切换器.dmg`（安装了 create-dmg 时）。
-- **入口说明**：`packaging/macos/launcher.py` 启动内置 Web 服务并打开浏览器；`packaging/macos/cursor_account_switcher.spec` 供 PyInstaller 使用。
-- **公证 / 签名**：未配置 Apple 开发者证书时，首次打开可能需在「系统设置 → 隐私与安全性」中允许，或对应用自行 **右键 → 打开**。
-
----
-
-## macOS Electron 内嵌 WebView 版（推荐，可选）
-
-该版本会把页面直接内嵌到 macOS 的独立窗口中，不再打开系统浏览器，并且用户无需额外安装 Python。
-
-在 **本仓库根目录**执行：
-
-```bash
-bash packaging/electron-app/build.sh
-```
-
-构建产物：
-- DMG：`packaging/electron-app/dist/Cursor账号切换器-1.0.0-arm64.dmg`
-- App：`packaging/electron-app/dist/mac-arm64/Cursor账号切换器.app`
-
 ### 常见问题：提示 “App 已损坏，无法打开”
 如果你是从浏览器下载后再安装，macOS 可能附带隔离属性（`com.apple.quarantine`），导致系统误判。
 
