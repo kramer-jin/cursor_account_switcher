@@ -222,6 +222,15 @@ bash packaging/electron-app/build.sh
 - DMG：`packaging/electron-app/dist/Cursor账号切换器-1.0.0-arm64.dmg`
 - App：`packaging/electron-app/dist/mac-arm64/Cursor账号切换器.app`
 
+### 常见问题：提示 “App 已损坏，无法打开”
+如果你是从浏览器下载后再安装，macOS 可能附带隔离属性（`com.apple.quarantine`），导致系统误判。
+
+可以先清除隔离属性，再重试打开（路径请替换成你实际安装/复制到的位置）：
+
+```bash
+xattr -dr com.apple.quarantine "/Applications/Cursor账号切换器.app"
+```
+
 ---
 
 ## 数据存储与安全
