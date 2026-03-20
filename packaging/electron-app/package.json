@@ -1,0 +1,32 @@
+{
+  "name": "cursor-account-switcher-electron",
+  "productName": "Cursor账号切换器",
+  "version": "1.0.0",
+  "description": "Cursor accounts switcher (embedded web UI)",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-builder --mac dmg"
+  },
+  "build": {
+    "appId": "dev.kramer.cursor-account-switcher-electron",
+    "productName": "Cursor账号切换器",
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    },
+    "files": [
+      "main.js",
+      "resources/**"
+    ],
+    "asar": false
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^28.3.0",
+    "electron-builder": "^24.13.3"
+  }
+}
+

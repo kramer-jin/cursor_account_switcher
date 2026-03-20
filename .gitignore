@@ -7,3 +7,17 @@ venv/
 .env
 *.egg-info/
 .DS_Store
+
+# build outputs
+dist/
+build/
+packaging/**/dist/
+packaging/**/build/
+
+# electron build
+packaging/electron-app/node_modules/
+packaging/electron-app/dist/
+packaging/electron-app/resources/backend/
+
+# local pyinstaller venvs
+.venv-build-*/
